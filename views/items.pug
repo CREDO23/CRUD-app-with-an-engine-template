@@ -6,5 +6,10 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel="stylesheet", href="/css/items.css")
         title Document
-    body 
-    p(class="text") Leads
+    body(class="body")
+        div(class="item")
+                p(class="text") #{item.content} 
+
+                div(class="btns")
+                    a(href="/items" + item.id + "/delete", ) Delete 
+                    a(href="/items" + item.id + "/edit", ) Edit
