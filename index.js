@@ -1,6 +1,7 @@
 const express = require("express");
 require("dotenv").config();
 const path = require("path");
+const pool = require("./config/database");
 
 const PORT = process.env.PORT || 3001;
 
@@ -11,12 +12,8 @@ app.use(express.json());
 app.set("veiw", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 
-// app.get("/", (req, res) => {
-//   res.send("App is running");
-// });
-
-app.get("/", (req, res)=>{
-  res.render("home", {titre : "Welcome to CRUD-App!"})
+app.get("/", (req, res) => {
+  res.render("home", { titre: "Welcome to CRUD-App!" });
 });
 
 app.listen(PORT, (error) => {
