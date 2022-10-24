@@ -7,6 +7,8 @@ const app = express();
 
 app.use(express.json());
 
+app.set("view", "pug");
+
 app.get("/", (req, res) => {
   res.send("App is running");
 });
