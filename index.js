@@ -17,8 +17,9 @@ app.get("/", (req, res) => {
 });
 
 app.get("/items", (req, res)=>{
-  res.render("items", {titre : "Items des prospects"})
+  res.render("items", {item : {content : 'Slut les amis' , id : 2455667}})
 });
+
 
 app.listen(PORT, (error) => {
   if (error) console.log(error);

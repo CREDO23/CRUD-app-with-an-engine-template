@@ -1,36 +1,83 @@
-.text
-{
-    display: flex;
-    flex-direction: colums;
-    
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins'
 }
-.main{
-    text-align: center;
+.body{
     display: flex;
-    flex-direction: column;
-    align-content: center;
+    justify-content: center;
     align-items: center;
-    margin: 50px;
-    margin-top: 200px;
+    height: 100vh;
+}
+.item
+{
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
+    border: solid rgb(0, 38, 255) 2px;
+    width: 300px;
+    padding: 15px;
+    border-radius: 10px;
+    gap: 20px;
+    font-size: small;
+}
+
+a{
+    border: solid white 1px;
+    background: rgb(0, 38, 255);
+    color : white;
+    text-decoration: none;
+    padding: 3px;
+    border-radius: 5px;
+    width: 60px;
+    text-align: center;
+}
+
+.btns{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
 }
 h1{
-    color: rgba(16, 16, 185, 0.959);
+    color: rgb(0, 38, 255);
+    margin: 10px;
+}
+.main{
+    margin: 10px;
+    display: flex;
+    width: 100vw;
+}
+.formulaire{
+    width: 50%;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 10px;
 }
 input{
     height: 100px;
     width: 400px;
     padding-left: 20px;
     margin-right: 20px;
-    border: 5px solid rgba(8, 8, 73, 0.384);
+    border: 2px solid rgb(0, 38, 255);
     border-radius: 10px;
 }
 .button{
     height: 40px;
     width: 100px;
-    background-color: rgba(8, 8, 73, 0.384);
-    color: beige;
-    font-size: 20px;
-    border-radius: 50px;
+    background-color: rgb(0, 38, 255);
+    color: white;
+    border: solid 1px white;
+    border-radius: 10px;
     cursor: pointer;
 
+}
+.items {
+    width: 50%;
 }

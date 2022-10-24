@@ -8,8 +8,10 @@ html(lang="en")
        
 
         title CRUD-APP
-    body(class="main")  
-    h1= titre
-    form(class="form", action="/", method="POST")
-        input(name="email", type="text", placeholer="Ajouter un text")
-        button(class='button', type="submit") Add 
+    body(class="main")
+        div.formulaire
+          h1= titre
+          form(class="form", action="/", method="POST")
+            input(name="email", type="text", placeholder="Ajouter un text")
+            button(class='button', type="submit") Add 
+        div(class="items") #{items}
