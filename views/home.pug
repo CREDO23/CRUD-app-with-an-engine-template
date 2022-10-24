@@ -4,11 +4,14 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/css/items.css")
        
 
         title CRUD-APP
-    body 
-    h1= titre
-    form(action="/" method="POST")
-    input(name="email", type="email")
-    button(class='Button', type="submit") Submit 
+    body(class="main")
+        div.formulaire
+          h1= titre
+          form(class="form", action="/", method="POST")
+            input(name="email", type="text", placeholder="Ajouter un text")
+            button(class='button', type="submit") Add 
+        div(class="items") #{items}
