@@ -11,8 +11,9 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
 }
-.item
+.post
 {
     display: inline-flex;
     justify-content: space-around;
@@ -26,7 +27,7 @@
     font-size: small;
 }
 
-a{
+a , .button{
     border: solid white 1px;
     background: rgb(0, 38, 255);
     color : white;
@@ -35,6 +36,7 @@ a{
     border-radius: 5px;
     width: 60px;
     text-align: center;
+    margin-top: 5px;
 }
 
 .btns{
@@ -68,17 +70,23 @@ input{
     border: 2px solid rgb(0, 38, 255);
     border-radius: 10px;
 }
-.button{
-    height: 40px;
-    margin: 10px 0;
-    width: 100px;
-    background-color: rgb(0, 38, 255);
-    color: white;
-    border: solid 1px white;
+.post input{
+    height: 100px;
+    border: 2px solid rgb(217, 217, 217);
+    width: 100%;
+    padding-left: 20px;
+    margin-right: 20px;
     border-radius: 10px;
-    cursor: pointer;
-
 }
-.items {
+.posts {
     width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    height: 600px;
+}
+
+.posts .post{
+    margin: 10px;
+    height: 100px;
 }

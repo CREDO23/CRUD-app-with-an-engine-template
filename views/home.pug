@@ -10,8 +10,17 @@ html(lang="en")
         title CRUD-APP
     body(class="main")
         div.formulaire
-          h1= titre
+          h1= Welcome
           form(class="form", action="/", method="POST")
-            input(name="email", type="text", placeholder="Add a post")
+            input(name="content", type="text", placeholder="Add a post")
             button(class='button', type="submit") Add 
-        div(class="items") #{items}
+        div(class="posts") 
+            if posts 
+            for post in posts
+                form(class="post" , action="/posts/delete/" + post.id, method="POST")
+                    p(class="text") #{post.content} 
+
+                    div(class="btns")
+                        button(class="button") Delete 
+                        a(href="/posts/" + post.id ) Edit
+

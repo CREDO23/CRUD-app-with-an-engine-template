@@ -1,16 +1,17 @@
-const { pool } = require("../config/database");
+const pool = require("../config/database");
 
 const getPost = (req, res, next) => {
-  pool.query(`SELECT * FROM posts WHERE ID=${req.params.id}`, (err, result) => {
+  pool.query(`SELECT * FROM posts WHERE id=${req.params.id}`, (err, result) => {
     if (err) next(err);
-    res.render("post", { post: result.rows });
+    console.log(result);
+    res.render("editPost", { post: result.rows[0] });
   });
 };
 
 const createPost = (req, res, next) => {
   pool.query(
-    `INSERT INTO posts (body) VALUES (${req.body.content})`,
-    (err, res) => {
+    `INSERT INTO posts (content) VALUES ('${req.body.content}')`,
+    (err, result) => {
       if (err) next(err);
       if (result) res.redirect("/");
     }
@@ -20,12 +21,12 @@ const createPost = (req, res, next) => {
 const getAllPosts = (req, res, next) => {
   pool.query(`SELECT * FROM posts`, (err, result) => {
     if (err) next(err);
-    res.render("posts", { posts: result.rows });
+    res.render("home", { posts: result?.rows });
   });
 };
 
 const deletePost = (req, res, next) => {
-  pool.query(`DELETE FROM posts WHERE ID=${req.params.id}`, (err, result) => {
+  pool.query(`DELETE FROM posts WHERE id=${req.params.id}`, (err, result) => {
     if (err) next(err);
     if (result) res.redirect("/");
   });
@@ -33,7 +34,7 @@ const deletePost = (req, res, next) => {
 
 const updatePost = (req, res, next) => {
   pool.query(
-    `UPDATE posts SET body=${req.body.content} WHERE ID=${req.params.id}`,
+    `UPDATE posts SET content='${req.body.content}' WHERE id=${req.params.id}`,
     (err, result) => {
       if (err) next(err);
       if (result) res.redirect("/");

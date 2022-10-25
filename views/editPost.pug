@@ -7,9 +7,7 @@ html(lang="en")
         link(rel="stylesheet", href="/css/items.css")
         title Document
     body(class="body")
-        div(class="item")
-                p(class="text") #{item.content} 
-
-                div(class="btns")
-                    a(href="/items" + item.id + "/delete", ) Delete 
-                    a(href="/items" + item.id + "/edit", ) Edit
+            form(class="post" , action="/posts/edit/" + post.id , method="POST") 
+                p(class="text") #{post.content} 
+                input(name="content", type="text", placeholder="edit post")
+                button(class='button', type="submit") Save
