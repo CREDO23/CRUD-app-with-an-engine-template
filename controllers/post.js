@@ -19,7 +19,7 @@ const createPost = (req, res, next) => {
 };
 
 const getAllPosts = (req, res, next) => {
-  pool.query(`SELECT * FROM posts`, (err, result) => {
+  pool.query(`SELECT * FROM posts `, (err, result) => {
     if (err) next(err);
     res.render("home", { posts: result?.rows });
   });
